@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="mctdemo.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Hello, World!"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Welcome to .NET Multi-platform App UI"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Click me"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />
+
+
+            <Button
+                x:Name="SnackBtn"
+                Clicked="OnSnackClicked"
+                HorizontalOptions="Center"
+                Text="Snackbar" />
+
+            <Button
+                x:Name="ToastBtn"
+                Clicked="OnToastClicked"
+                HorizontalOptions="Center"
+                Text="Toast" />
+
+            <Button Text="Fade Away">
+                <Button.Behaviors>
+                    <mct:AnimationBehavior EventName="Clicked">
+                        <mct:AnimationBehavior.AnimationType>
+                            <mct:FadeAnimation Opacity="0.5" />
+                        </mct:AnimationBehavior.AnimationType>
+                    </mct:AnimationBehavior>
+                </Button.Behaviors>
+            </Button>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
