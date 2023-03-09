@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
@@ -15,6 +15,7 @@
     </ContentPage.Resources>
 
     <VerticalStackLayout>
+        <Label Text="Email validation"/>
         <Entry>
             <Entry.Behaviors>
                 <mct:EmailValidationBehavior
@@ -23,5 +24,24 @@
                     ValidStyle="{StaticResource ValidEntryStyle}" />
             </Entry.Behaviors>
         </Entry>
+        <Entry Keyboard="Numeric" Placeholder="Enter your credit card number">
+            <Entry.Behaviors>
+                <mct:MaskedBehavior Mask="XXXX XXXX XXXX XXXX" />
+            </Entry.Behaviors>
+        </Entry>
+        <Entry Keyboard="Numeric" Placeholder="Enter your credit card number">
+            <Entry.Behaviors>
+                <mct:MaskedBehavior Mask="(XXX) XXX-XXXX" />
+            </Entry.Behaviors>
+        </Entry>
+        <Image
+            Source="dotnet_bot.png"
+            HeightRequest="200"
+            HorizontalOptions="Center" >
+            <Image.Behaviors>
+                <mct:IconTintColorBehavior TintColor="Red" />
+            </Image.Behaviors>
+        </Image>
+
     </VerticalStackLayout>
 </ContentPage>
